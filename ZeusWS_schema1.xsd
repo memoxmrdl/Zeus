@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://ws.zeus.com/" xmlns:tns="http://ws.zeus.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="GetArtExistencia" type="tns:GetArtExistencia"/>
+
+  <xs:element name="GetArtExistenciaResponse" type="tns:GetArtExistenciaResponse"/>
+
+  <xs:element name="GetArtImpto" type="tns:GetArtImpto"/>
+
+  <xs:element name="GetArtImptoResponse" type="tns:GetArtImptoResponse"/>
+
+  <xs:element name="GetArtPrecio" type="tns:GetArtPrecio"/>
+
+  <xs:element name="GetArtPrecioResponse" type="tns:GetArtPrecioResponse"/>
+
+  <xs:element name="GetArticulo" type="tns:GetArticulo"/>
+
+  <xs:element name="GetArticuloResponse" type="tns:GetArticuloResponse"/>
+
+  <xs:element name="GetCliente" type="tns:GetCliente"/>
+
+  <xs:element name="GetClienteResponse" type="tns:GetClienteResponse"/>
+
+  <xs:element name="GetClienteSaldo" type="tns:GetClienteSaldo"/>
+
+  <xs:element name="GetClienteSaldoResponse" type="tns:GetClienteSaldoResponse"/>
+
+  <xs:element name="GetListaArticulos" type="tns:GetListaArticulos"/>
+
+  <xs:element name="GetListaArticulosResponse" type="tns:GetListaArticulosResponse"/>
+
+  <xs:element name="GetListaClientes" type="tns:GetListaClientes"/>
+
+  <xs:element name="GetListaClientesResponse" type="tns:GetListaClientesResponse"/>
+
+  <xs:complexType name="GetArtPrecio">
+    <xs:sequence>
+      <xs:element name="args" type="xs:string" minOccurs="0"/>
+      <xs:element name="conn" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="GetArtPrecioResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="GetClienteSaldo">
+    <xs:sequence>
+      <xs:element name="args" type="xs:string" minOccurs="0"/>
+      <xs:element name="conn" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="GetClienteSaldoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="GetListaClientes">
+    <xs:sequence>
+      <xs:element name="args" type="xs:string" minOccurs="0"/>
+      <xs:element name="conn" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="GetListaClientesResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="GetArtExistencia">
+    <xs:sequence>
+      <xs:element name="args" type="xs:string" minOccurs="0"/>
+      <xs:element name="conn" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="GetArtExistenciaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="GetListaArticulos">
+    <xs:sequence>
+      <xs:element name="args" type="xs:string" minOccurs="0"/>
+      <xs:element name="conn" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="GetListaArticulosResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="GetArticulo">
+    <xs:sequence>
+      <xs:element name="args" type="xs:string" minOccurs="0"/>
+      <xs:element name="conn" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="GetArticuloResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="GetCliente">
+    <xs:sequence>
+      <xs:element name="args" type="xs:string" minOccurs="0"/>
+      <xs:element name="conn" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="GetClienteResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="GetArtImpto">
+    <xs:sequence>
+      <xs:element name="args" type="xs:string" minOccurs="0"/>
+      <xs:element name="conn" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="GetArtImptoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+ <definitions 
+ xmlns="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+ xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="ZeusWS" targetNamespace="http://ws.zeus.com/" xmlns:tns="http://ws.zeus.com/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:sc="http://schemas.sun.com/2006/03/wss/server" xmlns:wspp="http://java.sun.com/xml/ns/wsit/policy" xmlns:fi="http://java.sun.com/xml/ns/wsit/2006/09/policy/fastinfoset/service" xmlns:tcp="http://java.sun.com/xml/ns/wsit/2006/09/policy/soaptcp/service" xmlns:wsrm="http://docs.oasis-open.org/ws-rx/wsrmp/200702" 
+ >
+    <message name="GetListaArticulos"/>
+    <message name="GetListaArticulosResponse"/>
+    <message name="GetArtExistencia"/>
+    <message name="GetArtExistenciaResponse"/>
+    <message name="GetArtPrecio"/>
+    <message name="GetArtPrecioResponse"/>
+    <message name="GetArticulo"/>
+    <message name="GetArticuloResponse"/>
+    <message name="GetArtImpto"/>
+    <message name="GetArtImptoResponse"/>
+    <message name="GetListaClientes"/>
+    <message name="GetListaClientesResponse"/>
+    <message name="GetCliente"/>
+    <message name="GetClienteResponse"/>
+    <message name="GetClienteSaldo"/>
+    <message name="GetClienteSaldoResponse"/>
+    <message name="PostCliente"/>
+    <message name="PostClienteResponse"/>
+    <message name="UpdateCliente"/>
+    <message name="UpdateClienteResponse"/>
+    <message name="DeleteCliente"/>
+    <message name="DeleteClienteResponse"/>
+    <message name="PostDoctoVe"/>
+    <message name="PostDoctoVeResponse"/>
+    <portType name="ZeusWS">
+        <operation name="GetListaArticulos">
+            <input message="tns:GetListaArticulos"/>
+            <output message="tns:GetListaArticulosResponse"/>
+        </operation>
+        <operation name="GetArtExistencia">
+            <input message="tns:GetArtExistencia"/>
+            <output message="tns:GetArtExistenciaResponse"/>
+        </operation>
+        <operation name="GetArtPrecio">
+            <input message="tns:GetArtPrecio"/>
+            <output message="tns:GetArtPrecioResponse"/>
+        </operation>
+        <operation name="GetArticulo">
+            <input message="tns:GetArticulo"/>
+            <output message="tns:GetArticuloResponse"/>
+        </operation>
+        <operation name="GetArtImpto">
+            <input message="tns:GetArtImpto"/>
+            <output message="tns:GetArtImptoResponse"/>
+        </operation>
+        <operation name="GetListaClientes">
+            <input message="tns:GetListaClientes"/>
+            <output message="tns:GetListaClientesResponse"/>
+        </operation>
+        <operation name="GetCliente">
+            <input message="tns:GetCliente"/>
+            <output message="tns:GetClienteResponse"/>
+        </operation>
+        <operation name="GetClienteSaldo">
+            <input message="tns:GetClienteSaldo"/>
+            <output message="tns:GetClienteSaldoResponse"/>
+        </operation>
+        <operation name="PostCliente">
+            <input message="tns:PostCliente"/>
+            <output message="tns:PostClienteResponse"/>
+        </operation>
+        <operation name="UpdateCliente">
+            <input message="tns:UpdateCliente"/>
+            <output message="tns:UpdateClienteResponse"/>
+        </operation>
+        <operation name="DeleteCliente">
+            <input message="tns:DeleteCliente"/>
+            <output message="tns:DeleteClienteResponse"/>
+        </operation>
+        <operation name="PostDoctoVe">
+            <input message="tns:PostDoctoVe"/>
+            <output message="tns:PostDoctoVeResponse"/>
+        </operation>
+    </portType>
+    <binding name="ZeusWSPortBinding" type="tns:ZeusWS">
+        <operation name="GetListaArticulos">
+            <input></input>
+            <output></output>
+        </operation>
+        <operation name="GetArtExistencia">
+            <input></input>
+            <output></output>
+        </operation>
+        <operation name="GetArtPrecio">
+            <input></input>
+            <output></output>
+        </operation>
+        <operation name="GetArticulo">
+            <input></input>
+            <output></output>
+        </operation>
+        <operation name="GetArtImpto">
+            <input></input>
+            <output></output>
+        </operation>
+        <operation name="GetListaClientes">
+            <input></input>
+            <output></output>
+        </operation>
+        <operation name="GetCliente">
+            <input></input>
+            <output></output>
+        </operation>
+        <operation name="GetClienteSaldo">
+            <input></input>
+            <output></output>
+        </operation>
+        <operation name="PostCliente">
+            <input></input>
+            <output></output>
+        </operation>
+        <operation name="UpdateCliente">
+            <input></input>
+            <output></output>
+        </operation>
+        <operation name="DeleteCliente">
+            <input></input>
+            <output></output>
+        </operation>
+        <operation name="PostDoctoVe">
+            <input></input>
+            <output></output>
+        </operation>
+    </binding>
+    <service name="ZeusWS">
+        <port name="ZeusWSPort" binding="tns:ZeusWSPortBinding"/>
+    </service>
+    <wsp:Policy wsu:Id="ZeusWSPortBinding_GetVersion_Input_Policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:EncryptedParts>
+                    <sp:Body/>
+                </sp:EncryptedParts>
+                <sp:SignedParts>
+                    <sp:Body/>
+                </sp:SignedParts>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="ZeusWSPortBinding_GetVersion_Output_Policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:EncryptedParts>
+                    <sp:Body/>
+                </sp:EncryptedParts>
+                <sp:SignedParts>
+                    <sp:Body/>
+                </sp:SignedParts>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+</definitions>

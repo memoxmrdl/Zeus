@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conexiones>
+    <conexion key="conn1">
+        <servidor>localhost</servidor>
+        <username>SYSDBA</username>
+        <password>masterkey</password>
+        <database>C:\AD2000Generic.fdb</database>
+    </conexion>    
+    <conexion key="conn2">
+        <servidor>samicc.dyndns.org</servidor>
+        <username>SYSDBA</username>
+        <password>masterkey</password>
+        <database>C:\Microsip datos/AD2000.fdb</database>
+    </conexion>
+</conexiones>
