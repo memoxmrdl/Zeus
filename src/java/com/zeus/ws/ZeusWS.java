@@ -247,11 +247,11 @@ public class ZeusWS {
         String result;
 
         if(call.GetVersion(conn).isEmpty()) {
-            return Send.ReturnError("Error");
+            return Send.ReturnError("Error no es compatible con su BD");
         }
         
         if(args == null) {
-           return Send.ReturnError("cliente_id no deben ser nulos");  
+           return Send.ReturnError("clave_cliente no deben ser nulos");  
         } else {
            args = tool.StrEvalJson(args);
         }
@@ -287,7 +287,7 @@ public class ZeusWS {
         String result;
         
         if(call.GetVersion(conn).isEmpty()) {
-            return Send.ReturnError("asdasda");
+            return Send.ReturnError("Error no es compatible con su BD");
         }        
         
         if(args == null) {
@@ -515,6 +515,47 @@ public class ZeusWS {
             return Send.ReturnError(e.getMessage());
         }
                         
+        return result;
+    }
+    
+    
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "GetDirsCliente")
+    public String GetDirsCliente(@WebParam(name = "args") String args, @WebParam(name = "conn") String conn) {
+        callDaoMethod call = new callDaoMethod();
+        StrTool tool = new StrTool();
+        ReportError Send = new ReportError();
+        String result;
+
+        if(call.GetVersion(conn).isEmpty()) {
+            return Send.ReturnError("Error");
+        }
+        
+        if(args == null) {
+           return Send.ReturnError("cliente_id no deben ser nulo");  
+        } else {
+           args = tool.StrEvalJson(args);
+        }
+        
+        if(conn == null) {
+            return Send.ReturnError("Los datos de conexión no son correctos o esta vacia");
+        } else {         
+            conn = tool.StrEvalJson(conn);
+            
+            String t = call.GetVersion(conn);
+            if(!t.isEmpty()) {
+                return Send.ReturnError(t);
+            }
+        }
+        
+        try {
+         result = call.GetDirsCliente(args, conn);
+        } catch(Exception e) {
+            return Send.ReturnError(e.getMessage());
+        }
+        
         return result;
     }
 
