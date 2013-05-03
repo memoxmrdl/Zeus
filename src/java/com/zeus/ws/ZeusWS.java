@@ -245,10 +245,6 @@ public class ZeusWS {
         StrTool tool = new StrTool();
         ReportError Send = new ReportError();
         String result;
-
-        if(call.GetVersion(conn).isEmpty()) {
-            return Send.ReturnError("Error no es compatible con su BD");
-        }
         
         if(args == null) {
            return Send.ReturnError("clave_cliente no deben ser nulos");  
@@ -284,11 +280,7 @@ public class ZeusWS {
         callDaoMethod call = new callDaoMethod();
         StrTool tool = new StrTool();
         ReportError Send = new ReportError();
-        String result;
-        
-        if(call.GetVersion(conn).isEmpty()) {
-            return Send.ReturnError("Error no es compatible con su BD");
-        }        
+        String result;   
         
         if(args == null) {
            return Send.ReturnError("cliente_id no deben ser nulos");  
@@ -528,10 +520,6 @@ public class ZeusWS {
         StrTool tool = new StrTool();
         ReportError Send = new ReportError();
         String result;
-
-        if(call.GetVersion(conn).isEmpty()) {
-            return Send.ReturnError("Error");
-        }
         
         if(args == null) {
            return Send.ReturnError("cliente_id no deben ser nulo");  

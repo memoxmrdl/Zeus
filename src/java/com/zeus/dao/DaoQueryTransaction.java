@@ -266,7 +266,7 @@ public class DaoQueryTransaction {
             }
         }
         
-        return "Se inserto el cliente: " + Cliente_Id;
+        return "Se inserto el cliente " + Cliente_Id;
     }  
     
     
@@ -280,59 +280,7 @@ public class DaoQueryTransaction {
         DaoQuery queryDao = new DaoQuery();
         Connection conn = null;        
         Statement query = null;        
-                                           
-        /*if("".equals(Nombre)) {
-            Nombre = null;
-        }
-        if("".equals(Contacto1)) {
-            Contacto1 = null;
-        }
-        if("".equals(Contacto2)){
-            Contacto2 = null;
-        }                
-        if("".equals(Estatus)) {
-            Estatus = null;
-        }
-        if("".equals(Cond_Pago_Id)) {
-            Cond_Pago_Id = null;
-        }        
-        if("".equals(Tipo_Cliente_Id)) {
-            Tipo_Cliente_Id = null;
-        }
-        if("".equals(Zona_Cliente_Id)) {
-            Zona_Cliente_Id = null;
-        }
-        if("".equals(Cobrador_Id)) {
-            Cobrador_Id = null;
-        }
-        if("".equals(Vendedor_Id)) {
-            Vendedor_Id = null;
-        }
-        if("".equals(Clave_Cliente)) {
-            Clave_Cliente = null;
-        }
-        if("".equals(Nombre_Calle)) {
-            Nombre_Calle = null;
-        }
-        if("".equals(Num_Exterior)) {
-            Num_Exterior = null;
-        }
-        if("".equals(Num_Interior)) {
-            Num_Interior = null;
-        }
-        if("".equals(Colonia)) {
-            Colonia = null;
-        }
-        if("".equals(Poblacion)) {
-            Poblacion = null;
-        }
-        if("".equals(Referencia)) {
-            Referencia = null;
-        }
-        if("".equals(Ciudad_Id)) {
-            Ciudad_Id = null;
-        }*/
-        
+                                                
         if(Cliente_Id == null || "".equals(Cliente_Id)) {
             throw new SQLException("Error al actualizar se requiere CLIENTE_ID");
         }       
@@ -344,32 +292,33 @@ public class DaoQueryTransaction {
         queryDao.setDataBase(this.getDataBase());
                 
         String ClienteSQL = null;
-        String Set1 = "";        
-        if(Nombre != null || "".equals(Nombre)) {
+        String Set1 = ""; 
+        
+        if(Nombre != null || !"".equals(Nombre)) {
             Set1 = Set1 + "NOMBRE='" + Nombre+ "',";
         }
-        if(Contacto1 != null || "".equals(Contacto1)) {
+        if(Contacto1 != null || !"".equals(Contacto1)) {
             Set1 = Set1 + "CONTACTO1='"+ Contacto1 +"',";
         }
-        if(Contacto2 != null || "".equals(Contacto2)) {
+        if(Contacto2 != null || !"".equals(Contacto2)) {
             Set1 = Set1 + "CONTACTO2='"+ Contacto2 +"',";
         }
-        if(Estatus != null || "".equals(Estatus)) {
+        if(Estatus != null || !"".equals(Estatus)) {
             Set1 = Set1 + "ESTATUS='"+ Estatus +"',";
         }
-        if(Limite_Credito != null || "".equals(Limite_Credito)) {
+        if(Limite_Credito != null || !"".equals(Limite_Credito)) {
             Set1 = Set1 + "LIMITE_CREDITO="+Limite_Credito+",";
         }
-        if(Moneda_Id != null || "".equals(Moneda_Id)) {
+        if(Moneda_Id != null || !"".equals(Moneda_Id)) {
             Set1 = Set1 + "MONEDA_ID="+Moneda_Id+",";
         }
-        if(Zona_Cliente_Id != null || "".equals(Zona_Cliente_Id)) {
+        if(Zona_Cliente_Id != null || !"".equals(Zona_Cliente_Id)) {
             Set1 = Set1 + "ZONA_CLIENTE_ID="+Zona_Cliente_Id+",";
         }
-        if(Cobrador_Id != null || "".equals(Cobrador_Id)) {
+        if(Cobrador_Id != null || !"".equals(Cobrador_Id)) {
             Set1 = Set1 + "COBRADOR_ID="+Cobrador_Id+",";
         }
-        if(Vendedor_Id != null || "".equals(Vendedor_Id)) {
+        if(Vendedor_Id != null || !"".equals(Vendedor_Id)) {
             Set1 = Set1 + "VENDEDOR_ID="+Vendedor_Id+",";
         }
         if(!"".equals(Set1)) {
@@ -379,7 +328,7 @@ public class DaoQueryTransaction {
         
         String ClaveClienteSQL = null;
         String Set2 = "";        
-        if(Clave_Cliente != null || "".equals(Clave_Cliente)) {
+        if(Clave_Cliente != null || !"".equals(Clave_Cliente)) {
             Set2 = Set2 + "CLAVE_CLIENTE='"+ Clave_Cliente +"',";
         }
         if(!"".equals(Set2)) {
@@ -390,29 +339,29 @@ public class DaoQueryTransaction {
         String DirClienteSQL = null;
         String Calle = "";
         String Set3 = "";        
-        if(Nombre_Calle != null || "".equals(Nombre_Calle)) {
+        if(Nombre_Calle != null || !"".equals(Nombre_Calle)) {
             Set3 = Set3 + "NOMBRE_CALLE='"+Nombre_Calle+"',";           
             Calle = Calle + Nombre_Calle;
         }
-        if(Num_Exterior != null || "".equals(Num_Exterior)) {
+        if(Num_Exterior != null || !"".equals(Num_Exterior)) {
             Set3 = Set3 + "NUM_EXTERIOR='"+Num_Exterior+"',";
             Calle = Calle + Num_Exterior;
         }
-        if(Num_Interior != null || "".equals(Num_Interior)) {
+        if(Num_Interior != null || !"".equals(Num_Interior)) {
             Set3 = Set3 + "NUM_INTERIOR='"+Num_Interior+"',";            
             Calle = Calle + Num_Interior;
         }
-        if(Colonia != null || "".equals(Colonia)) {
+        if(Colonia != null || !"".equals(Colonia)) {
             Set3 = Set3 + "COLONIA='"+Colonia+"',";
             Calle = Calle + Colonia;
         }        
-        if(Poblacion != null || "".equals(Poblacion)) {
+        if(Poblacion != null || !"".equals(Poblacion)) {
             Set3 = Set3 + "POBLACION='"+Poblacion+"',";            
         }
-        if(Referencia != null || "".equals(Referencia)) {
+        if(Referencia != null || !"".equals(Referencia)) {
             Set3 = Set3 + "REFERENCIA='"+Referencia+"',";
         }
-        if(Ciudad_Id != null || "".equals(Ciudad_Id)) {
+        if(Ciudad_Id != null || !"".equals(Ciudad_Id)) {
             List<CiuEstPas> getCEP = null;
             try {
                 getCEP = queryDao.GetIdCiuEstPas(Ciudad_Id); 
@@ -489,7 +438,7 @@ public class DaoQueryTransaction {
             }            
         }            
                 
-        return "0";
+        return "true";
     }  
     
     public String DeleteCliente(String Cliente_Id) throws SQLException {
@@ -519,7 +468,7 @@ public class DaoQueryTransaction {
             }  
         }
         
-        return "0";
+        return "true";
     }
     
     
@@ -762,7 +711,7 @@ public class DaoQueryTransaction {
             }  
         }
         
-        return "0"; 
+        return "Se inserto el docto " + Docto_Id; 
     }
     
     public double CalcDscto(String unidades, String precio_unitario, String pctje_dscto) {

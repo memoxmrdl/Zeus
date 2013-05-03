@@ -16,7 +16,7 @@ public class Tester {
        
        String conn, result, params;
        
-       conn = "{server:localhost,db:'C:/AD2000.FDB',username:SYSDBA,pwd:masterkey}";
+       conn = "{server:localhost,db:C:/AD2000.FDB,username:SYSDBA,pwd:masterkey}";
        params = "{cliente_id: 331}";
        result = null;
        

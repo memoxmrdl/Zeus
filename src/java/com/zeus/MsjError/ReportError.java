@@ -11,6 +11,8 @@ package com.zeus.MsjError;
 public class ReportError {
     public String ReturnError(String message) {
 
+        message = message.replaceAll("[\n\r\"]", " ");
+        
         if(this.searchStr("EXECUTE PROCEDURE Z_GET_ART_IMPTO", message)) {
            return "Procedure unknown EXECUTE PROCEDURE Z_GET_ART_IMPTO";
         } 
@@ -29,5 +31,4 @@ public class ReportError {
         }
         return false;
     }
-   
 }
